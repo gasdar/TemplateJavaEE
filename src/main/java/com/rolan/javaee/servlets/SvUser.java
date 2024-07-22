@@ -24,7 +24,17 @@ public class SvUser extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        // Obtener datos desde la instancia HttpServletRest 'request'
+        String userDni = request.getParameter("user_dni");
+        String username = request.getParameter("username");
+        String userEmail = request.getParameter("user_email");
+        String userPass = request.getParameter("user_pass");
+        
+        System.out.println("userDni = " + userDni);
+        System.out.println("username = " + username);
+        System.out.println("userEmail = " + userEmail);
+        System.out.println("userPass = " + userPass);
     }
 
     /**
