@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="./assets/css/app.css">
+        <link rel="stylesheet" href="./assets/css/main.css">
         <title>Java EE</title>
     </head>
     <body>
@@ -17,7 +17,7 @@
                     <li class="userlist__item">
                         <div class="userlist__button">
                             <img src="assets/svgs/home.svg" alt="main icon" class="userlist__icon"/>
-                            <a href="#" class="usernav__link">Inicio</a>
+                            <a href="./index.jsp" class="usernav__link">Inicio</a>
                         </div>
                     </li>
 
@@ -99,8 +99,20 @@
                               <label for="user_pass" class="form-label">Password</label>
                               <input type="password" class="form-control" id="user_pass" name="user_pass">
                             </div>
-                            <button type="submit" class="btn btn-primary">Registrar</button>
-                          </form>
+                            <button type="submit" class="btn btn-primary mb-3">Registrar</button>
+                            
+                            <%  String successful = String.valueOf(request.getSession().getAttribute("successful"));
+                                String failed = String.valueOf(request.getSession().getAttribute("failed"));
+                                if(!successful.equalsIgnoreCase("null")) {%>
+                            <div class="form-text alert alert-primary" role="alert">
+                                <%=successful%>
+                            </div>
+                              <%} else if(!failed.equalsIgnoreCase("null")) {%>
+                            <div class="form-text alert alert-danger" role="alert">
+                                <%=failed%>
+                            </div>
+                              <%}%>
+                        </form>
                     </div>
                 </div>
 

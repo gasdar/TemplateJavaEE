@@ -1,5 +1,6 @@
 package com.rolan.javaee.servlets;
 
+import com.rolan.javaee.logic.LogicalController;
 import com.rolan.javaee.logic.User;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
@@ -14,6 +15,11 @@ import java.util.List;
 @WebServlet(name = "SvUser", urlPatterns = {"/SvUser"})
 public class SvUser extends HttpServlet {
 
+    private LogicalController control = null;
+    
+    public SvUser() {
+        this.control = new LogicalController();
+    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -23,12 +29,7 @@ public class SvUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // Obtener Lista de usuarios "BD Lógica"
-        List<User> userLists = new ArrayList<>();
-        userLists.add(new User("11.111.111-1", "Pepe", "pepe@gmail.com", "123"));
-        userLists.add(new User("22.222.222-2", "Rolan", "rolan@gmail.com", "123"));
-        userLists.add(new User("33.333.333-3", "Maria", "maria@gmail.com", "123"));
-        userLists.add(new User("44.444.444-4", "Camila", "camila@gmail.com", "123"));
+        List<User> userLists = this.control.findAllUsers();
         
         /*La sesión siempre se crea de forma automática cuando un usuario entra a
         la web, de manera correcta, se autentica de manera baja*/
@@ -48,17 +49,17 @@ public class SvUser extends HttpServlet {
         String userEmail = request.getParameter("user_email");
         String userPass = request.getParameter("user_pass");
         
-        System.out.println("userDni = " + userDni);
-        System.out.println("username = " + username);
-        System.out.println("userEmail = " + userEmail);
-        System.out.println("userPass = " + userPass);
+        User user = control.createUser(userDni, username, userEmail, userPass);
+        HttpSession session = request.getSession();
+        if(user != null) {
+            session.setAttribute("successful", "El usuario se ha registrado correctamente!");            
+            response.sendRedirect("index.jsp");
+        } else {
+            session.setAttribute("failed", "El usuario no se ha podido registrar!");            
+            response.sendRedirect("index.jsp");
+        }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

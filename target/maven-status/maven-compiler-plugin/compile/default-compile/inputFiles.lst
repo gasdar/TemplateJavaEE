@@ -1,4 +1,10 @@
 D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\resources\JakartaEE10Resource.java
+D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\persistence\UserJpaController.java
+D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\persistence\exceptions\NonexistentEntityException.java
+D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\persistence\exceptions\PreexistingEntityException.java
+D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\persistence\exceptions\IllegalOrphanException.java
 D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\servlets\SvUser.java
+D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\logic\LogicalController.java
+D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\persistence\PersistenceController.java
 D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\JakartaRestConfiguration.java
 D:\cursos\todocode\JavaEE\src\main\java\com\rolan\javaee\logic\User.java

@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Users Info</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="../assets/css/app.css">
+        <link rel="stylesheet" href="../assets/css/main.css">
     </head>
     <body>
         <%
@@ -25,7 +25,7 @@
                     <li class="userlist__item">
                         <div class="userlist__button">
                             <img src="../assets/svgs/home.svg" alt="main icon" class="userlist__icon"/>
-                            <a href="#" class="usernav__link">Inicio</a>
+                            <a href="../index.jsp" class="usernav__link">Inicio</a>
                         </div>
                     </li>
 
@@ -89,7 +89,7 @@
                 
                 <h2>Lista de Usuarios del Sistema</h2>
                 
-                <table class="info">
+                <table class="table table-dark table-hover mb-2">
                     <thead>
                         <tr>
                             <th>N° User</th>
@@ -104,11 +104,14 @@
                             <td><%=count%></td>
                             <td><%=user.getDni()%></td>
                             <td><%=user.getUsername()%></td>
-                            <td>@<%=user.getEmail()%></td>
+                            <td><%=user.getEmail()%></td>
                         </tr>
                         <%count += 1;}%>
                     </tbody>
                 </table>
+                <%if(userLists.isEmpty()){%>
+                <div class="form-text alert alert-danger">Aún no existen registros en la BD!</div>
+                <%}%>
                 
             </div>
         </main>

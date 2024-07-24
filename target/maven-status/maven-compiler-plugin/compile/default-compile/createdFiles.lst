@@ -1,4 +1,10 @@
+com\rolan\javaee\servlets\SvUser.class
+com\rolan\javaee\persistence\exceptions\IllegalOrphanException.class
+com\rolan\javaee\persistence\PersistenceController.class
+com\rolan\javaee\persistence\exceptions\NonexistentEntityException.class
+com\rolan\javaee\logic\LogicalController.class
 com\rolan\javaee\resources\JakartaEE10Resource.class
 com\rolan\javaee\JakartaRestConfiguration.class
-com\rolan\javaee\servlets\SvUser.class
+com\rolan\javaee\persistence\exceptions\PreexistingEntityException.class
 com\rolan\javaee\logic\User.class
+com\rolan\javaee\persistence\UserJpaController.class

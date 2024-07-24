@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+#root {
+    --blanco: #fff;
+    --negro: #000;
+}
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+}
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.seccion {
+    padding: 30px 0;
+}
+.info {
+    max-width: 450px;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* USERGRID */
+.userflex {
+    display: flex;
+}
+
+/* USERNAV&USERLIST PART*/
+.usernav {
+    flex-basis: 400px;
+}
+.usernav__link {
+    color: #343434;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+}
+.usernav__link--inside:hover {
+    background-color: #eee;
+}
+.usernav__link--inside {
+    border-radius: 6px;
+    padding-left: 10px;
+    text-align: left;
+}
+.userlist {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 16px 16px 0;
+    background-color: #fff;
+}
+.userlist__item {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.userlist__item--click {
+    cursor: pointer;
+}
+.userlist__button {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 80%;
+    margin: 0 auto;
+}
+.arrow .userlist__arrow {
+    transform: rotate(90deg);
+}
+.userlist__icon, .userlist__arrow {
+    display: inline;
+}
+.userlist__arrow {
+    margin-left: auto;
+    transition: transform .4s;
+}
+.userlist__show {
+    width: 85%;
+    margin-left: auto;
+    border-left: 2px solid #4a4a4a;
+    transition: height .4s;
+    height: 0;
+}
+
+
+/* USERACTION PARTS */
+.useraction {
+    padding: 50px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.userdata__heading {
+    text-align: center;
+}
+.userdata__form {
+    max-width: 450px;
+    margin: 0 auto;
+}
