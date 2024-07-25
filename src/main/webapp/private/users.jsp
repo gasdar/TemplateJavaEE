@@ -17,7 +17,6 @@
     <body>
         <%
             List<User> userLists = (List) request.getSession().getAttribute("user_lists");
-            int count = 1;
         %>
         <main class="userflex">
             <nav class="usernav">
@@ -101,12 +100,12 @@
                     <tbody>
                         <%for(User user : userLists) {%>
                         <tr>
-                            <td><%=count%></td>
+                            <td><%=user.getId()%></td>
                             <td><%=user.getDni()%></td>
                             <td><%=user.getUsername()%></td>
                             <td><%=user.getEmail()%></td>
                         </tr>
-                        <%count += 1;}%>
+                        <%}%>
                     </tbody>
                 </table>
                 <%if(userLists.isEmpty()){%>
